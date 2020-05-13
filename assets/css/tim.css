@@ -1,0 +1,46 @@
+#papertradedescription
+{
+    color: white;
+    font-size: 40px;
+    text-align: center;
+    margin-bottom: 100px;
+    letter-spacing: 1px;
+}
+
+.desccontent
+{
+    line-height: 30px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.blankspace30
+{
+    height: 30px;
+}
+
+.blankspace15
+{
+    height: 15px;
+}
+
+.boldcontent
+{
+    font-weight: bold;
+}
+
+.codedemo
+{
+    background-color: lightgray;
+    font-family: monospace;
+    border-radius: 10px;
+    text-align: center; 
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+parameter
+{
+    color: blue;
+}

@@ -1,0 +1,120 @@
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<title>Paper Trade</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<link rel="stylesheet" href="assets/css/tim.css"/>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper" class="fade-in">
+
+				<!-- Header -->
+				<header id="header">
+					<a href="index.html" class="logo">Paper Trade</a>
+				</header>
+
+				<!--Intro-->
+				<p id="papertradedescription">Free Simulated Investing Service</p>
+
+				<!-- Nav -->
+				<nav id="nav">
+					<ul class="links">
+						<li class="active"><a href="index.html">Web API</a></li>
+						<li><a href="generic.html">Essentials</a></li>
+						<li><a href="elements.html">Command Line Interface</a></li>
+					</ul>
+				</nav>
+
+				<!-- Main -->
+				<div id="main">
+					<div class="blankspace30"></div>
+					<p class="desccontent">Our service provides a 100% free "paper money" investment platform.  A paper trade is simulated trading which allows investors to practice buying and selling securities without risking real money.  Our API is very simple and exclusively uses GET HTTP requests.  You can find the documentation and specification below.</p>
+					
+					<!--Create Portfolio-->
+					<div class="blankspace15"></div>
+					<p class="desccontent boldcontent">Create a new portfolio</p>
+					<p class="desccontent">This is the first request that you make to use the service.  This will return an ID string that corresponds to the newly created portfolio.  You use this ID for every service that follows.  Keep this ID in a safe place!  There is no way of recovering it and if someone else obtained it, they can execute transactions in your account.</p>
+					<div class="blankspace15"></div>
+					<p class="desccontent">Parameters</p>
+					<p class="desccontent">&#8226; <b>ownername</b> - The name that will be attached to the portfolio as the portfolio owner.</p>
+					<div class="blankspace15"></div>
+					<p class="desccontent">Example Request</p>
+					<p class="desccontent codedemo">GET http://papertrade.azurewebsites.net/api/CreatePortfolio?ownername=<parameter>KenSmith</parameter></p>
+					<div class="blankspace15"></div>
+					<p class="desccontent">Example Response</p>
+					<p class="desccontent codedemo">​01c1b435-4857-4ffe-8d05-42edd9e6bf85</p>
+					<div class="blankspace30"></div>
+
+					<!--Edit Cash-->
+					<div class="blankspace15"></div>
+					<p class="desccontent boldcontent">Add or Subtract Cash from your portfolio</p>
+					<p class="desccontent">To purchase stock you must first have cash!  Use this call to add or subtract cash to your portfolio.  This call will either return true (the call executed successfully) or false (the call failed).</p>
+					<div class="blankspace15"></div>
+					<p class="desccontent">Parameters</p>
+					<p class="desccontent">&#8226; <b>portfolioId</b> - The unique ID of your portfolio.</p>
+					<p class="desccontent">&#8226; <b>amount</b> - the amount which you want to add or subtract to your portfolio.  Positive = add, negative = subtract.</p>
+					<div class="blankspace15"></div>
+					<p class="desccontent">Example Request</p>
+					<p class="desccontent codedemo">GET http://papertrade.azurewebsites.net/api/EditCash?portfolioId=<parameter>03701dc3-311e-459e-91f3-0c47387c6f51</parameter>&amount=<parameter>1500</parameter></p>
+					<div class="blankspace30"></div>
+
+					<!--Buy/Sell a Stock-->
+					<div class="blankspace15"></div>
+					<p class="desccontent boldcontent">Buy or Sell a Stock</p>
+					<p class="desccontent">Use this to purchase or sell shares of stock.  This call will either return true (the call executed successfully) or false (the call failed).</p>
+					<div class="blankspace15"></div>
+					<p class="desccontent">Parameters</p>
+					<p class="desccontent">&#8226; <b>portfolioId</b> - The unique ID of your portfolio.</p>
+					<p class="desccontent">&#8226; <b>stocksymbol</b> - the symbol of the equity you would like to trade.</p>
+					<p class="desccontent">&#8226; <b>ordertype</b> - either buy or sell..</p>
+					<p class="desccontent">&#8226; <b>quantity</b> - the quantity of shares you would like to trade.</p>
+					<div class="blankspace15"></div>
+					<p class="desccontent">Example Request</p>
+					<p class="desccontent codedemo">​GET http://papertrade.azurewebsites.net/api/TradeEquity?portfolioId=<parameter>03701dc3-311e-459e-91f3-0c47387c6f51</parameter>&stocksymbol=<parameter>msft</parameter>&ordertype=<parameter>buy</parameter>&quantity=<parameter>10</parameter></p>
+					<div class="blankspace15"></div>
+					<p class="desccontent codedemo">​GET http://papertrade.azurewebsites.net/api/TradeEquity?portfolioId=<parameter>03701dc3-311e-459e-91f3-0c47387c6f51</parameter>&stocksymbol=<parameter>crm</parameter>&ordertype=<parameter>sell</parameter>&quantity=<parameter>3</parameter></p>
+					<div class="blankspace30"></div>
+
+
+					<!--List Portfolio holdings-->
+					<div class="blankspace15"></div>
+					<p class="desccontent boldcontent">List portfolio holdings</p>
+					<p class="desccontent">Use this call to get a list of the stocks that your portfolio holds.</p>
+					<div class="blankspace15"></div>
+					<p class="desccontent">Parameters</p>
+					<p class="desccontent">&#8226; <b>portfolioId</b> - The unique ID of your portfolio.</p>
+					<div class="blankspace15"></div>
+					<p class="desccontent">Example Request</p>
+					<p class="desccontent codedemo">GET http://papertrade.azurewebsites.net/api/ListHoldings?portfolioId=<parameter>03701dc3-311e-459e-91f3-0c47387c6f51</parameter></p>
+					<p class="desccontent">Example Response</p>
+					<p class="desccontent codedemo">[{"Symbol":"MSFT","Quantity":1},{"Symbol":"AMD","Quantity":1}]</p>
+					<div class="blankspace30"></div>
+					
+					<div class="blankspace30"></div>
+				</div>
+
+
+				<!-- Copyright -->
+				<div id="copyright">
+					<ul><li>&copy; Tim Hanewich</li></ul>
+				</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
