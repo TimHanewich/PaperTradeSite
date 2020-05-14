@@ -26,8 +26,9 @@
 				<nav id="nav">
 					<ul class="links">
 						<li class="active"><a href="index.html">Web API</a></li>
-						<li><a href="generic.html">Essentials</a></li>
-						<li><a href="elements.html">Command Line Interface</a></li>
+						<li><a href="Essentials.html">Essentials API</a></li>
+						<li><a href="https://www.nuget.org/packages/PaperTrade/" target="_blank">.NET SDK</a></li>
+						<li><a href="CLI.html">Command Line Interface</a></li>
 					</ul>
 				</nav>
 
@@ -94,6 +95,74 @@
 					<p class="desccontent codedemo">GET http://papertrade.azurewebsites.net/api/ListHoldings?portfolioId=<parameter>03701dc3-311e-459e-91f3-0c47387c6f51</parameter></p>
 					<p class="desccontent">Example Response</p>
 					<p class="desccontent codedemo">[{"Symbol":"MSFT","Quantity":1},{"Symbol":"AMD","Quantity":1}]</p>
+					<div class="blankspace30"></div>
+
+					<!--Get Portfolio Cash Balance-->
+					<div class="blankspace15"></div>
+					<p class="desccontent boldcontent">Get portfolio cash balance</p>
+					<p class="desccontent">Use this call to calculate the net gain or loss of your portfolio.</p>
+					<div class="blankspace15"></div>
+					<p class="desccontent">Parameters</p>
+					<p class="desccontent">&#8226; <b>portfolioId</b> - The unique ID of your portfolio.</p>
+					<div class="blankspace15"></div>
+					<p class="desccontent">Example Request</p>
+					<p class="desccontent codedemo">http://papertrade.azurewebsites.net/api/CalculateProfit?portfolioId=<parameter>03701dc3-311e-459e-91f3-0c47387c6f51</parameter></p>
+					<div class="blankspace30"></div>
+
+					<!--Calculate Portfolio Gain or Loss-->
+					<div class="blankspace15"></div>
+					<p class="desccontent boldcontent">Calculate portfolio net gain or loss</p>
+					<p class="desccontent">Use this call to get the cash balance of the portfolio.</p>
+					<div class="blankspace15"></div>
+					<p class="desccontent">Parameters</p>
+					<p class="desccontent">&#8226; <b>portfolioId</b> - The unique ID of your portfolio.</p>
+					<div class="blankspace15"></div>
+					<p class="desccontent">Example Request</p>
+					<p class="desccontent codedemo">GET http://papertrade.azurewebsites.net/api/CashBalance?portfolioId=<parameter>03701dc3-311e-459e-91f3-0c47387c6f51</parameter></p>
+					<div class="blankspace30"></div>
+
+
+					<!--List Equity Transactions-->
+					<div class="blankspace15"></div>
+					<p class="desccontent boldcontent">List Equity Transactions</p>
+					<p class="desccontent">Use this call to get a list of all equity transactions (buying or selling a stock).</p>
+					<div class="blankspace15"></div>
+					<p class="desccontent">Parameters</p>
+					<p class="desccontent">&#8226; <b>portfolioId</b> - The unique ID of your portfolio.</p>
+					<div class="blankspace15"></div>
+					<p class="desccontent">Example Request</p>
+					<p class="desccontent codedemo">GET http://papertrade.azurewebsites.net/api/ListEquityTransactions?portfolioId=<parameter>03701dc3-311e-459e-91f3-0c47387c6f51</parameter></p>
+					<p class="desccontent">Example Response</p>
+					<p class="desccontent codedemo">[{"StockSymbol":"TSLA","Quantity":1,"OrderType":0,"TransactedOn":"2020-02-19T20:25:47.2239604+00:00"}]</p>
+					<div class="blankspace30"></div>
+
+
+					<!--List Cash Transactions-->
+					<div class="blankspace15"></div>
+					<p class="desccontent boldcontent">List Cash Transactions</p>
+					<p class="desccontent">Use this call to get a list of all cash transactions (adding or subtracting cash from a portfolio).</p>
+					<div class="blankspace15"></div>
+					<p class="desccontent">Parameters</p>
+					<p class="desccontent">&#8226; <b>portfolioId</b> - The unique ID of your portfolio.</p>
+					<div class="blankspace15"></div>
+					<p class="desccontent">Example Request</p>
+					<p class="desccontent codedemo">GET http://papertrade.azurewebsites.net/api/ListCashTransactions?portfolioId=<parameter>03701dc3-311e-459e-91f3-0c47387c6f51</parameter></p>
+					<p class="desccontent">Example Response</p>
+					<p class="desccontent codedemo">[{"CashChange":1000.0,"TransactedOn":"2020-02-19T20:25:46.4270948+00:00"},{"CashChange":-40.8800049,"TransactedOn":"2020-02-20T12:49:59.8779176-08:00"}]</p>
+					<div class="blankspace30"></div>
+
+
+					<!--Set Cash Balance-->
+					<div class="blankspace15"></div>
+					<p class="desccontent boldcontent">Set Cash Balance</p>
+					<p class="desccontent">Use this call to set a specific cash balance for your portfolio.  This call will return true if successful and false if unsuccessful.</p>
+					<div class="blankspace15"></div>
+					<p class="desccontent">Parameters</p>
+					<p class="desccontent">&#8226; <b>portfolioId</b> - The unique ID of your portfolio.</p>
+					<p class="desccontent">&#8226; <b>cashamount</b> - The amount of cash that you wish to set your portfolio cash balance to.</p>
+					<div class="blankspace15"></div>
+					<p class="desccontent">Example Request</p>
+					<p class="desccontent codedemo">GET http://papertrade.azurewebsites.net/api/SetCash?portfolioId=<parameter>03701dc3-311e-459e-91f3-0c47387c6f51</parameter>&cashamount=<parameter>700</parameter></p>
 					<div class="blankspace30"></div>
 					
 					<div class="blankspace30"></div>

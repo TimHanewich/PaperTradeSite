@@ -1,0 +1,104 @@
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<title>Paper Trade</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<link rel="stylesheet" href="assets/css/tim.css"/>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper" class="fade-in">
+
+				<!-- Header -->
+				<header id="header">
+					<a href="index.html" class="logo">Paper Trade</a>
+				</header>
+
+				<div class="blankspace30"></div>
+				<div class="blankspace30"></div>
+				<div class="blankspace30"></div>
+
+				<!-- Nav -->
+				<nav id="nav">
+					<ul class="links">
+						<li><a href="index.html">Web API</a></li>
+						<li class="active"><a href="Essentials.html">Essentials API</a></li>
+						<li><a href="https://www.nuget.org/packages/PaperTrade/" target="_blank">.NET SDK</a></li>
+						<li><a href="CLI.html">Command Line Interface</a></li>
+					</ul>
+				</nav>
+
+				<!-- Main -->
+				<div id="main">
+					<div class="blankspace30"></div>
+					<p class="desccontent">Don't want to run a simulated investing portfolio but still want access to stock data?  Use the following API call to receive summary stock data.</p>
+					
+					<div class="blankspace30"></div>
+
+					<!--Create Portfolio-->
+					<p class="desccontent">Example Request</p>
+					<p class="desccontent codedemo">​GET http://papertrade.azurewebsites.net/api/StockSummaryData?symbol=<parameter>ge</parameter></p>
+					<div class="blankspace15"></div>
+					<p class="desccontent">Parameters</p>
+					<p class="desccontent">&#8226; <b>symbol</b> - The stock symbol of the company that you are requesting data for.</p>
+					<div class="blankspace15"></div>
+					<div class="blankspace15"></div>
+					<p class="desccontent">Example Response</p>
+					<p class="desccontent codedemo">{
+						"Name": "General Electric Company",
+						"StockSymbol": "GE",
+						"Price": 7.03,
+						"DollarChange": -0.2,
+						"PercentChange": -0.0277,
+						"PreviousClose": 7.23,
+						"Open": 7.69,
+						"BidPrice": 7.07,
+						"BidQuantity": 36200,
+						"AskPrice": 7.1,
+						"AskQuantity": 28000,
+						"DayRangeLow": 7,
+						"DayRangeHigh": 7.75,
+						"YearRangeLow": 7,
+						"YearRangeHigh": 7.75,
+						"Volume": 95416797,
+						"AverageVolume": 84593544,
+						"MarketCap": 61161000960,
+						"Beta": 1.29,
+						"PriceEarningsRatio": null,
+						"EarningsPerShare": -0.62,
+						"EarningsDate": "2020-04-28T00:00:00",
+						"ForwardDividend": 0.04,
+						"ForwardDividendYield": 0.0055,
+						"ExDividendDate": "2020-03-05T00:00:00",
+						"YearTargetEstimate": 10.71,
+						"DataCollectedOn": "2020-04-07T22:53:10.3522555+00:00"
+					  }</p>
+					<div class="blankspace30"></div>
+					
+					<div class="blankspace30"></div>
+				</div>
+
+
+				<!-- Copyright -->
+				<div id="copyright">
+					<ul><li>&copy; Tim Hanewich</li></ul>
+				</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
