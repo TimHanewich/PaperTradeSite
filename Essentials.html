@@ -41,6 +41,7 @@
 					<div class="blankspace30"></div>
 
 					<!--Create Portfolio-->
+					<p class="desccontent"><b>Requesting Data for Individual Stocks</b></p>
 					<p class="desccontent">Example Request</p>
 					<p class="desccontent codedemo">​GET http://papertradesim.azurewebsites.net/api/StockSummaryData?symbol=<parameter>ge</parameter></p>
 					<div class="blankspace15"></div>
@@ -78,8 +79,138 @@
 						"YearTargetEstimate": 10.71,
 						"DataCollectedOn": "2020-04-07T22:53:10.3522555+00:00"
 					  }</p>
+
+
 					<div class="blankspace30"></div>
-					
+					<div class="blankspace30"></div>
+					<p class="desccontent"><b>Requesting Data for Multiple Stocks</b></p>
+					<p class="desccontent">If you would like to simultaneously request data for multiple stocks, use this API end point:</p>
+					<p class="desccontent">Example Request</p>
+					<p class="desccontent codedemo">​POST http://papertradesim.azurewebsites.net/api/MultipleStockSummaryData</p>
+					<p class="desccontent">Body (string array in JSON format)</p>
+					<p class="desccontent codedemo">["MSFT","AAPL","FB","PG","GE"]</p>
+					<p class="desccontent">Example Response</p>
+					<p class="desccontent codedemo">[
+						{
+							"Name": "Microsoft Corporation",
+							"StockSymbol": "MSFT",
+							"Price": 203.06,
+							"DollarChange": 2.49,
+							"PercentChange": 0.0124,
+							"PreviousClose": 200.57,
+							"Open": 202.09,
+							"BidPrice": 203.37,
+							"BidQuantity": 1300,
+							"AskPrice": 203.34,
+							"AskQuantity": 2200,
+							"DayRangeLow": 201.43,
+							"DayRangeHigh": 203.95,
+							"YearRangeLow": 130.78,
+							"YearRangeHigh": 203.95,
+							"Volume": 21407663,
+							"AverageVolume": 42612912,
+							"MarketCap": 1539999924224.0,
+							"Beta": 0.93,
+							"PriceEarningsRatio": 33.83,
+							"EarningsPerShare": 6.0,
+							"EarningsDate": "2020-07-16T00:00:00",
+							"ForwardDividend": 2.04,
+							"ForwardDividendYield": 0.010199999,
+							"ExDividendDate": "2020-08-19T00:00:00",
+							"YearTargetEstimate": 201.11,
+							"DataCollectedOn": "2020-06-23T18:44:13.1572924+00:00"
+						},
+						{
+							"Name": "Apple Inc.",
+							"StockSymbol": "AAPL",
+							"Price": 370.04,
+							"DollarChange": 11.17,
+							"PercentChange": 0.0311,
+							"PreviousClose": 358.87,
+							"Open": 364.0,
+							"BidPrice": 369.97,
+							"BidQuantity": 1200,
+							"AskPrice": 370.12,
+							"AskQuantity": 3000,
+							"DayRangeLow": 362.28,
+							"DayRangeHigh": 372.37,
+							"YearRangeLow": 192.58,
+							"YearRangeHigh": 372.37,
+							"Volume": 39598982,
+							"AverageVolume": 39234781,
+							"MarketCap": 1604000022528.0,
+							"Beta": 1.17,
+							"PriceEarningsRatio": 29.07,
+							"EarningsPerShare": 12.73,
+							"EarningsDate": "2020-07-28T00:00:00",
+							"ForwardDividend": 3.28,
+							"ForwardDividendYield": 0.0091,
+							"ExDividendDate": "2020-05-08T00:00:00",
+							"YearTargetEstimate": 332.43,
+							"DataCollectedOn": "2020-06-23T18:44:12.9409033+00:00"
+						},
+						{
+							"Name": "Facebook, Inc.",
+							"StockSymbol": "FB",
+							"Price": 244.71,
+							"DollarChange": 5.49,
+							"PercentChange": 0.0229,
+							"PreviousClose": 239.22,
+							"Open": 241.28,
+							"BidPrice": 244.86,
+							"BidQuantity": 900,
+							"AskPrice": 244.68,
+							"AskQuantity": 1100,
+							"DayRangeLow": 239.86,
+							"DayRangeHigh": 245.19,
+							"YearRangeLow": 137.1,
+							"YearRangeHigh": 245.19,
+							"Volume": 18407565,
+							"AverageVolume": 24371500,
+							"MarketCap": 697203032064.0,
+							"Beta": 1.2,
+							"PriceEarningsRatio": 33.58,
+							"EarningsPerShare": 7.29,
+							"EarningsDate": "2020-07-22T00:00:00",
+							"ForwardDividend": null,
+							"ForwardDividendYield": null,
+							"ExDividendDate": null,
+							"YearTargetEstimate": 244.32,
+							"DataCollectedOn": "2020-06-23T18:44:13.093138+00:00"
+						},
+						{
+							"Name": "The Procter & Gamble Company",
+							"StockSymbol": "PG",
+							"Price": 118.19,
+							"DollarChange": 0.44,
+							"PercentChange": 0.0037,
+							"PreviousClose": 117.75,
+							"Open": 118.67,
+							"BidPrice": 118.47,
+							"BidQuantity": 1000,
+							"AskPrice": 118.48,
+							"AskQuantity": 900,
+							"DayRangeLow": 117.99,
+							"DayRangeHigh": 119.19,
+							"YearRangeLow": 94.34,
+							"YearRangeHigh": 128.09,
+							"Volume": 3061895,
+							"AverageVolume": 9961118,
+							"MarketCap": 292596023296.0,
+							"Beta": 0.4,
+							"PriceEarningsRatio": 63.68,
+							"EarningsPerShare": 1.86,
+							"EarningsDate": "2020-07-30T00:00:00",
+							"ForwardDividend": 3.16,
+							"ForwardDividendYield": 0.0269,
+							"ExDividendDate": "2020-04-23T00:00:00",
+							"YearTargetEstimate": 129.43,
+							"DataCollectedOn": "2020-06-23T18:44:13.6356234+00:00"
+						}
+					]</p>
+					  
+
+
 					<div class="blankspace30"></div>
 				</div>
 
