@@ -58,3 +58,13 @@ parameter
     line-height: 30px;
     margin: auto auto;
 }
+
+.ClickToDownload
+{
+    text-align: center;
+    font-size: 15px;
+    color: royalblue;
+    max-width: 750px;
+    line-height: 30px;
+    margin: auto auto;
+}
