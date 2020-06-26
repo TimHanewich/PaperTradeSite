@@ -40,8 +40,8 @@
 					
 					<div class="blankspace30"></div>
 
-					<!--Create Portfolio-->
-					<p class="desccontent"><b>Requesting Data for Individual Stocks</b></p>
+					
+					<p class="desccontent"><b>Requesting Summary Data for Individual Stocks</b></p>
 					<p class="desccontent">Example Request</p>
 					<p class="desccontent codedemo">​GET http://papertradesim.azurewebsites.net/api/StockSummaryData?symbol=<parameter>ge</parameter></p>
 					<div class="blankspace15"></div>
@@ -83,7 +83,7 @@
 
 					<div class="blankspace30"></div>
 					<div class="blankspace30"></div>
-					<p class="desccontent"><b>Requesting Data for Multiple Stocks</b></p>
+					<p class="desccontent"><b>Requesting Summary Data for Multiple Stocks</b></p>
 					<p class="desccontent">If you would like to simultaneously request data for multiple stocks, use this API end point:</p>
 					<p class="desccontent">Example Request</p>
 					<p class="desccontent codedemo">​POST http://papertradesim.azurewebsites.net/api/MultipleStockSummaryData</p>
@@ -209,7 +209,243 @@
 						}
 					]</p>
 					  
+					<div class="blankspace30"></div>
 
+					<p class="desccontent"><b>Requesting Statistical Data for Individual Stocks</b></p>
+					<p class="desccontent">Example Request</p>
+					<p class="desccontent codedemo">​GET http://papertradesim.azurewebsites.net/api/StockStatisticalData?symbol=<parameter>ge</parameter></p>
+					<div class="blankspace15"></div>
+					<p class="desccontent">Parameters</p>
+					<p class="desccontent">&#8226; <b>symbol</b> - The stock symbol of the company that you are requesting data for.</p>
+					<div class="blankspace15"></div>
+					<div class="blankspace15"></div>
+					<p class="desccontent">Example Response</p>
+					<p class="desccontent codedemo">{
+						"FiscalYearEnds": "2019-12-30T00:00:00",
+						"MostRecentQuarter": "2020-03-30T00:00:00",
+						"ProfitMargin": -0.0253,
+						"OperatingMargin": 0.060100004,
+						"ReturnOnAssets": 0.012200001,
+						"ReturnOnEquity": 0.1259,
+						"Revenue": 93539999744,
+						"RevenuePerShare": 10.71,
+						"QuarterlyRevenueGrowth": -0.076,
+						"GrossProfit": 18809999360,
+						"EBITDA": 11089999872,
+						"NetIncomeAvailableToCommon": 5340000256,
+						"DilutedEps": -0.32,
+						"QuarterlyEarningsGrowth": 0.72800004,
+						"TotalCash": 31010000896,
+						"TotalCashPerShare": 3.55,
+						"TotalDebt": 88220000256,
+						"TotalDebtEquityRatio": 239.35,
+						"CurrentRatio": 1.88,
+						"BookValuePerShare": 4.03,
+						"OperatingCashFlow": 8439999488,
+						"LeveredFreeCashFlow": 18069999616,
+						"Beta": 0.95,
+						"YearChange": -0.3721,
+						"SP500YearChange": 0.0429,
+						"YearHigh": 13.26,
+						"YearLow": 5.48,
+						"MovingAverage50Day": 6.82,
+						"MovingAverage200Day": 9.06,
+						"AverageVolume3Month": 118440000,
+						"AverageVolume10Day": 93220000,
+						"SharesOutstanding": 8750000128,
+						"Float": 8729999360,
+						"PercentHeldByInsiders": 0.0013,
+						"PercentHeldByInstitutions": 0.6361,
+						"SharesShort": 111820000,
+						"ShortRatio": 0.84,
+						"ShortPercentOfFloat": 0.0128999995,
+						"ShortPercentOfSharesOutstanding": 0.0128,
+						"ForwardAnnualDividend": 0.04,
+						"ForwardAnnualDividendYield": 0.0057,
+						"TrailingAnnualDividend": 0.04,
+						"TrailingAnnualDividendYield": 0.0061000003,
+						"FiveYearAverageDividendYield": 3.15,
+						"DividendPayoutRatio": 0.0656,
+						"DividendDate": "2020-04-26T00:00:00",
+						"ExDividendDate": "2020-06-25T00:00:00",
+						"LastSplitFactor": "104:100",
+						"LastSplitDate": "2019-02-25T00:00:00",
+						"QueriedSymbol": "GE",
+						"DataCollectedOn": "2020-06-25T23:58:36.609698+00:00"
+					}</p>
+
+					
+					<div class="blankspace30"></div>
+
+					<p class="desccontent"><b>Requesting Statistical Data for Multiple Stocks</b></p>
+					<p class="desccontent">If you would like to simultaneously request statistical data for multiple stocks, use this API end point:</p>
+					<p class="desccontent">Example Request</p>
+					<p class="desccontent codedemo">​POST http://papertradesim.azurewebsites.net/api/MultipleStockStatisticalData</p>
+					<p class="desccontent">Body (string array in JSON format)</p>
+					<p class="desccontent codedemo">["JNJ","CL","PG"]</p>
+					<p class="desccontent">Example Response</p>
+					<p class="desccontent codedemo">[
+						{
+							"FiscalYearEnds": "2019-12-28T00:00:00",
+							"MostRecentQuarter": "2020-03-28T00:00:00",
+							"ProfitMargin": 0.2075,
+							"OperatingMargin": 0.2606,
+							"ReturnOnAssets": 0.0883,
+							"ReturnOnEquity": 0.2855,
+							"Revenue": 82730000384,
+							"RevenuePerShare": 31.36,
+							"QuarterlyRevenueGrowth": 0.033,
+							"GrossProfit": 54599999488,
+							"EBITDA": 28549998592,
+							"NetIncomeAvailableToCommon": 17169999872,
+							"DilutedEps": 6.41,
+							"QuarterlyEarningsGrowth": 0.546,
+							"TotalCash": 18019999744,
+							"TotalCashPerShare": 6.84,
+							"TotalDebt": 27580000256,
+							"TotalDebtEquityRatio": 45.0,
+							"CurrentRatio": 1.31,
+							"BookValuePerShare": 23.28,
+							"OperatingCashFlow": 23229999104,
+							"LeveredFreeCashFlow": 22629998592,
+							"Beta": 0.7,
+							"YearChange": -0.0062,
+							"SP500YearChange": 0.0429,
+							"YearHigh": 157.0,
+							"YearLow": 109.16,
+							"MovingAverage50Day": 146.11,
+							"MovingAverage200Day": 143.94,
+							"AverageVolume3Month": 9220000,
+							"AverageVolume10Day": 7220000,
+							"SharesOutstanding": 2640000000,
+							"Float": 2630000128,
+							"PercentHeldByInsiders": 0.0008,
+							"PercentHeldByInstitutions": 0.7025,
+							"SharesShort": 13760000,
+							"ShortRatio": 1.77,
+							"ShortPercentOfFloat": 0.0052,
+							"ShortPercentOfSharesOutstanding": 0.0052,
+							"ForwardAnnualDividend": 4.04,
+							"ForwardAnnualDividendYield": 0.028900001,
+							"TrailingAnnualDividend": 3.8,
+							"TrailingAnnualDividendYield": 0.0272,
+							"FiveYearAverageDividendYield": 2.67,
+							"DividendPayoutRatio": 0.59279996,
+							"DividendDate": "2020-06-08T00:00:00",
+							"ExDividendDate": "2020-05-21T00:00:00",
+							"LastSplitFactor": "2:1",
+							"LastSplitDate": "2001-06-12T00:00:00",
+							"QueriedSymbol": "JNJ",
+							"DataCollectedOn": "2020-06-26T00:03:26.6928518+00:00"
+						},
+						{
+							"FiscalYearEnds": "2019-12-30T00:00:00",
+							"MostRecentQuarter": "2020-03-30T00:00:00",
+							"ProfitMargin": 0.1586,
+							"OperatingMargin": 0.2305,
+							"ReturnOnAssets": 0.16389999,
+							"ReturnOnEquity": 40.8397,
+							"Revenue": 15909999616,
+							"RevenuePerShare": 18.54,
+							"QuarterlyRevenueGrowth": 0.055,
+							"GrossProfit": 9340000256,
+							"EBITDA": 4150000128,
+							"NetIncomeAvailableToCommon": 2520000000,
+							"DilutedEps": 2.93,
+							"QuarterlyEarningsGrowth": 0.277,
+							"TotalCash": 897000000,
+							"TotalCashPerShare": 1.05,
+							"TotalDebt": 7849999872,
+							"TotalDebtEquityRatio": 2300.88,
+							"CurrentRatio": 0.96,
+							"BookValuePerShare": -0.13,
+							"OperatingCashFlow": 3300000000,
+							"LeveredFreeCashFlow": 2549999872,
+							"Beta": 0.59,
+							"YearChange": -0.0015,
+							"SP500YearChange": 0.0429,
+							"YearHigh": 77.41,
+							"YearLow": 58.49,
+							"MovingAverage50Day": 71.32,
+							"MovingAverage200Day": 70.46,
+							"AverageVolume3Month": 4490000,
+							"AverageVolume10Day": 3320000,
+							"SharesOutstanding": 856530048,
+							"Float": 796979968,
+							"PercentHeldByInsiders": 0.0023999999,
+							"PercentHeldByInstitutions": 0.8093,
+							"SharesShort": 12560000,
+							"ShortRatio": 2.64,
+							"ShortPercentOfFloat": 0.015700001,
+							"ShortPercentOfSharesOutstanding": 0.0147,
+							"ForwardAnnualDividend": 1.76,
+							"ForwardAnnualDividendYield": 0.024400001,
+							"TrailingAnnualDividend": 1.72,
+							"TrailingAnnualDividendYield": 0.0239,
+							"FiveYearAverageDividendYield": 2.33,
+							"DividendPayoutRatio": 0.587,
+							"DividendDate": "2020-08-13T00:00:00",
+							"ExDividendDate": "2020-07-16T00:00:00",
+							"LastSplitFactor": "2:1",
+							"LastSplitDate": "2013-05-15T00:00:00",
+							"QueriedSymbol": "CL",
+							"DataCollectedOn": "2020-06-26T00:03:26.6906438+00:00"
+						},
+						{
+							"FiscalYearEnds": "2019-06-29T00:00:00",
+							"MostRecentQuarter": "2020-03-30T00:00:00",
+							"ProfitMargin": 0.0709,
+							"OperatingMargin": 0.22799999,
+							"ReturnOnAssets": 0.083500005,
+							"ReturnOnEquity": 0.1001,
+							"Revenue": 70349996032,
+							"RevenuePerShare": 28.2,
+							"QuarterlyRevenueGrowth": 0.046,
+							"GrossProfit": 33439997952,
+							"EBITDA": 19059998720,
+							"NetIncomeAvailableToCommon": 4729999872,
+							"DilutedEps": 1.86,
+							"QuarterlyEarningsGrowth": 0.063,
+							"TotalCash": 15390000128,
+							"TotalCashPerShare": 6.22,
+							"TotalDebt": 36899999744,
+							"TotalDebtEquityRatio": 80.32,
+							"CurrentRatio": 0.82,
+							"BookValuePerShare": 18.03,
+							"OperatingCashFlow": 16750000128,
+							"LeveredFreeCashFlow": 11329999872,
+							"Beta": 0.4,
+							"YearChange": 0.060500003,
+							"SP500YearChange": 0.0429,
+							"YearHigh": 128.09,
+							"YearLow": 94.34,
+							"MovingAverage50Day": 115.92,
+							"MovingAverage200Day": 119.11,
+							"AverageVolume3Month": 9640000,
+							"AverageVolume10Day": 8080000,
+							"SharesOutstanding": 2470000128,
+							"Float": 2470000128,
+							"PercentHeldByInsiders": 0.0011,
+							"PercentHeldByInstitutions": 0.65029997,
+							"SharesShort": 16620001,
+							"ShortRatio": 2.22,
+							"ShortPercentOfFloat": 0.0068,
+							"ShortPercentOfSharesOutstanding": 0.0067000003,
+							"ForwardAnnualDividend": 3.16,
+							"ForwardAnnualDividendYield": 0.0272,
+							"TrailingAnnualDividend": 2.98,
+							"TrailingAnnualDividendYield": 0.0256,
+							"FiveYearAverageDividendYield": 3.07,
+							"DividendPayoutRatio": 1.6214999,
+							"DividendDate": "2020-05-14T00:00:00",
+							"ExDividendDate": "2020-04-22T00:00:00",
+							"LastSplitFactor": "2:1",
+							"LastSplitDate": "2004-06-20T00:00:00",
+							"QueriedSymbol": "PG",
+							"DataCollectedOn": "2020-06-26T00:03:26.6815103+00:00"
+						}
+					]</p>
+					
 
 					<div class="blankspace30"></div>
 				</div>
