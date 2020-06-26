@@ -41,9 +41,20 @@
     font-size: 15px;
     line-height: 18px;
     padding: 10px 10px;
+    word-break: break-all;
 }
 
 parameter
 {
     color: blue;
+}
+
+.warningannouncement
+{
+    text-align: center;
+    font-size: 20px;
+    color: red;
+    max-width: 750px;
+    line-height: 30px;
+    margin: auto auto;
 }
