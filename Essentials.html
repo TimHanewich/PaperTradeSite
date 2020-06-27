@@ -61,10 +61,11 @@
 					<div class="blankspace30"></div>
 					<p class="desccontent"><b>Requesting Data for Multiple Stocks</b></p>
 					<p class="desccontent">Example Request</p>
-					<p class="desccontent codedemo">​POST http://papertradesim.azurewebsites.net/api/MultipleStockData?summary=<parameter>true</parameter>&statistics=<parameter>true</parameter></p>
+					<p class="desccontent codedemo">​POST http://papertradesim.azurewebsites.net/api/MultipleStockData?summary=<parameter>true</parameter>&statistics=<parameter>true</parameter>&trycount=<parameter>3</parameter></p>
 					<p class="desccontent">Parameters</p>
 					<p class="desccontent">&#8226; <b>summary</b> - 'true' or 'false'. Indicates if you would like summary data returned in the data package.</p>
 					<p class="desccontent">&#8226; <b>statistics</b> - 'true' or 'false'. Indicates if you would like statistical data returned in the data package.</p>
+					<p class="desccontent">&#8226; <b>trycount</b> - The number of times the system should re-try should an error occur.</p>
 					<p class="desccontent">Body (string array in JSON format)</p>
 					<div class="blankspace15"></div>
 					<p class="desccontent codedemo">["MSFT","AAPL","FB"]</p>
